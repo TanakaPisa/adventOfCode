@@ -1,11 +1,9 @@
 package aoc.day01;
 
 import aoc.Day;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Arrays;
-
-import static java.lang.System.arraycopy;
 
 public class Day01 implements Day {
 
@@ -22,7 +20,7 @@ public class Day01 implements Day {
     }
 
     //Change String to Integer List
-    private List<Integer> strToIntList(List<String> strList){
+    private List<Integer> strToIntList(List<String> strList) {
 
         List<Integer> intList = new ArrayList<Integer>();
         for (String s : strList) intList.add(Integer.valueOf(s));
@@ -46,14 +44,14 @@ public class Day01 implements Day {
 
         int counter = 0;
 
-        for (int i = 0; i < intList.size()-3; i++) {
-            int groupOneSum = 0 , groupTwoSum = 0;
-            for (int j = i; j < i + 3 ;j++){
-                groupOneSum +=  intList.get(j);
-                groupTwoSum +=  intList.get(j+1);
+        for (int i = 0; i < intList.size() - 3; i++) {
+            int groupOneSum = 0, groupTwoSum = 0;
+            for (int j = i; j < i + 3; j++) {
+                groupOneSum += intList.get(j);
+                groupTwoSum += intList.get(j + 1);
             }
 
-            if (groupOneSum < groupTwoSum){
+            if (groupOneSum < groupTwoSum) {
                 counter++;
             }
         }
